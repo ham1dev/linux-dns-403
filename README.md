@@ -19,17 +19,16 @@ This Bash script allows users to easily configure DNS settings on a Linux server
 - Ensure Bash is installed (common on most Linux systems).
 
 ## Installation and Usage:
-
-### Quick Install Using `curl`:
-You can install and run the script with a single command using `curl`:
-
+### 1 - Download the script 
 ```bash
-sudo curl -sSL https://raw.githubusercontent.com/ham1dev/linux-dns-403/main/dns-changer.sh | bash
+wget https://raw.githubusercontent.com/ham1dev/linux-dns-403/main/dns-changer.sh
 ```
-### Quick Install Using wget:
-Alternatively, use wget to achieve the same result:
-
+### 2 - Make the Script Executable
 ```bash
-sudo wget -qO- https://raw.githubusercontent.com/ham1dev/linux-dns-403/main/dns-changer.sh | bash
+chmod +x dns-changer.sh
+```
+### 3 - Run the Script
+```bash
+./dns-changer.sh
 ```
 
