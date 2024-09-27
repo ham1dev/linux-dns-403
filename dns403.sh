@@ -56,59 +56,59 @@ touch /etc/resolv.conf
 
 
 # Display available DNS options
-echo "$banner"
-echo  "${BOLD_CYAN}Please choose a DNS option:${NC}\n"
-echo  "1) ${BOLD_YELLOW}403 Online${NC} [10.202.10.202, 10.202.10.102]"
-echo  "2) ${BOLD_YELLOW}Radar Game${NC} [10.202.10.10, 10.202.10.11]"
-echo  "3) ${BOLD_YELLOW}Pishgaman${NC} [5.202.100.100, 5.202.100.101]"
-echo  "4) ${BOLD_YELLOW}Shecan${NC} [178.22.122.100, 185.51.200.2]"
-echo  "5) ${BOLD_YELLOW}Begzar${NC} [185.55.226.26, 185.55.225.25]"
-echo  "6) ${BOLD_YELLOW}Electro${NC} [78.157.42.100, 78.157.42.101]"
-echo  "7) ${BOLD_RED}Restart to default${NC} (restore from resolv-main.conf)\n"
-read -p "$(echo "${BOLD_CYAN}Enter your choice (1-7): ${NC}")" option
+echo -e "$banner"
+echo -e  "${BOLD_CYAN}Please choose a DNS option:${NC}\n"
+echo -e  "1) ${BOLD_YELLOW}403 Online${NC} [10.202.10.202, 10.202.10.102]"
+echo -e  "2) ${BOLD_YELLOW}Radar Game${NC} [10.202.10.10, 10.202.10.11]"
+echo -e  "3) ${BOLD_YELLOW}Pishgaman${NC} [5.202.100.100, 5.202.100.101]"
+echo -e  "4) ${BOLD_YELLOW}Shecan${NC} [178.22.122.100, 185.51.200.2]"
+echo -e  "5) ${BOLD_YELLOW}Begzar${NC} [185.55.226.26, 185.55.225.25]"
+echo -e  "6) ${BOLD_YELLOW}Electro${NC} [78.157.42.100, 78.157.42.101]"
+echo -e  "7) ${BOLD_RED}Restart to default${NC} (restore from resolv-main.conf)\n"
+read -p "$(echo -e "${BOLD_CYAN}Enter your choice (1-7): ${NC}")" option
 
 
 # Update the /etc/resolv.conf based on the user's selection
 case $option in
     1)
-        echo "nameserver 10.202.10.202" > /etc/resolv.conf
-        echo "nameserver 10.202.10.102" >> /etc/resolv.conf
-        echo "${GREEN}403 Online DNS has been set.${NC}"
+        echo -e "nameserver 10.202.10.202" > /etc/resolv.conf
+        echo -e "nameserver 10.202.10.102" >> /etc/resolv.conf
+        echo -e "${GREEN}403 Online DNS has been set.${NC}"
         ;;
     2)
-        echo "nameserver 10.202.10.10" > /etc/resolv.conf
-        echo "nameserver 10.202.10.11" >> /etc/resolv.conf
-        echo "${GREEN}Radar Game DNS has been set.${NC}"
+        echo -e "nameserver 10.202.10.10" > /etc/resolv.conf
+        echo -e "nameserver 10.202.10.11" >> /etc/resolv.conf
+        echo -e "${GREEN}Radar Game DNS has been set.${NC}"
         ;;
     3)
-        echo "nameserver 5.202.100.100" > /etc/resolv.conf
-        echo "nameserver 5.202.100.101" >> /etc/resolv.conf
-        echo "${GREEN}Pishgaman has been set.${NC}"
+        echo -e "nameserver 5.202.100.100" > /etc/resolv.conf
+        echo -e "nameserver 5.202.100.101" >> /etc/resolv.conf
+        echo -e "${GREEN}Pishgaman has been set.${NC}"
         ;;
     4)
-        echo "nameserver 178.22.122.100" > /etc/resolv.conf
-        echo "nameserver 185.51.200.2" >> /etc/resolv.conf
-        echo "${GREEN}Shecan DNS has been set.${NC}"
+        echo -e "nameserver 178.22.122.100" > /etc/resolv.conf
+        echo -e "nameserver 185.51.200.2" >> /etc/resolv.conf
+        echo -e "${GREEN}Shecan DNS has been set.${NC}"
         ;;
     5)
-        echo "nameserver 185.55.226.26" > /etc/resolv.conf
-        echo "nameserver 185.55.225.25" >> /etc/resolv.conf
-        echo "${GREEN}Begzar DNS has been set.${NC}"
+        echo -e "nameserver 185.55.226.26" > /etc/resolv.conf
+        echo -e "nameserver 185.55.225.25" >> /etc/resolv.conf
+        echo -e "${GREEN}Begzar DNS has been set.${NC}"
         ;;
     6)
-        echo "nameserver 78.157.42.100" > /etc/resolv.conf
-        echo "nameserver 78.157.42.101" >> /etc/resolv.conf
-        echo "${GREEN}Electro DNS has been set.${NC}"
+        echo -e "nameserver 78.157.42.100" > /etc/resolv.conf
+        echo -e "nameserver 78.157.42.101" >> /etc/resolv.conf
+        echo -e "${GREEN}Electro DNS has been set.${NC}"
         ;;                
     7)
         if [ -f "$BACKUP_FILE" ]; then
           cp "$BACKUP_FILE" /etc/resolv.conf
-          echo "${PURPLE}DNS settings restored to default (from resolv-main.conf).${NC}"
+          echo -e "${PURPLE}DNS settings restored to default (from resolv-main.conf).${NC}"
         else
-          echo "${RED}No backup file found to restore defaults.${NC}"
+          echo -e "${RED}No backup file found to restore defaults.${NC}"
         fi
         ;;          
     *)
-        echo "${RED}Invalid option! Please enter a number between 1 and 7.${NC}"      
+        echo -e "${RED}Invalid option! Please enter a number between 1 and 7.${NC}"      
         ;;
 esac
