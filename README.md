@@ -1,4 +1,6 @@
 # linux-dns-403
+![linux-dns-403](https://github.com/user-attachments/assets/27cf7f4b-341f-43c1-93c3-65f78a4b8800)
+
 This Bash script allows users to easily configure DNS settings on a Linux server by selecting from various DNS providers. It also includes features for backing up and restoring DNS settings and automatically handling symbolic links for `/etc/resolv.conf`.
 
 ## Features:
