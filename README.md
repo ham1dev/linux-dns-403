@@ -1,11 +1,6 @@
 # linux-dns-403
 ![linux-dns-403](https://github.com/user-attachments/assets/27cf7f4b-341f-43c1-93c3-65f78a4b8800)
-
-This Bash script allows users to easily configure DNS settings on a Linux server by selecting from various DNS providers. It also includes features for backing up and restoring DNS settings and automatically handling symbolic links for `/etc/resolv.conf`.
-
-## Features:
-- **Simple DNS configuration**: Easily switch between different DNS providers.
-- **Backup and restore**: Automatically backs up the current `/etc/resolv.conf` and allows restoring the default DNS configuration.
+A Linux tool for easily changing DNS settings to bypass restrictions and improve access.
 
 ## Supported DNS Providers:
 1. **[403 Online](https://403.online)** - `10.202.10.202`, `10.202.10.102`
@@ -16,21 +11,40 @@ This Bash script allows users to easily configure DNS settings on a Linux server
 6. **[Electro](https://electrotm.org/)** - `78.157.42.100`, `78.157.42.101`
 7. **Restart to default** - Restore the original `resolv.conf` from the backup (if available).
 
-## Prerequisites:
-- The script must be run as **root** or with **sudo**.
-- Ensure Bash is installed (common on most Linux systems).
 
-## Installation and Usage:
-### 1 - Download the script 
-```bash
-wget https://raw.githubusercontent.com/ham1dev/linux-dns-403/main/dns-changer.sh
-```
-### 2 - Make the Script Executable
-```bash
-chmod +x dns-changer.sh
-```
-### 3 - Run the Script
-```bash
-./dns-changer.sh
-```
+## Usage
+
+### Option 1: Run the script directly
+
+1. Download the script:
+    ```bash
+    wget https://raw.githubusercontent.com/ham1dev/linux-dns-403/main/dns403.sh
+    ```
+
+2. Make the script executable:
+    ```bash
+    chmod +x dns403.sh
+    ```
+
+3. Run the script:
+    ```bash
+    sudo ./dns403.sh
+    ```
+
+### Option 2: Install the script
+
+1. Download the script:
+    ```bash
+    git clone https://github.com/ham1dev/linux-dns-403.git
+    cd linux-dns-403
+    ```
+2. Make the script executable:
+    ```bash
+    chmod +x install.sh
+    ```    
+    
+3. Run the installation script:
+    ```bash
+    sudo ./install.sh
+    ```
 
